@@ -1,0 +1,8 @@
+# Goal
+int32 num_min
+---
+# Result
+string[] dishes_washed
+---
+# Feedback
+string last_washed

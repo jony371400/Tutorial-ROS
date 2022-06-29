@@ -1,0 +1,6 @@
+string name
+int64 age
+
+---
+string CustomerName
+int64 CustomerAge

@@ -1,0 +1,8 @@
+<launch>
+    <!-- <param name="/print_frq" type="double" value="2.0" /> -->
+    
+    <node name="Launch_Publisher_Node" pkg="tutorial" type="topic_publisher.py" />
+    <node name="Launch_Subscriber_Node" pkg="tutorial" type="topic_subscriber.py" />
+
+    <node name="Launch_Service_Server_Node" pkg="tutorial" type="service_server.py" />
+</launch>
