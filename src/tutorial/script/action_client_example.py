@@ -1,26 +1,24 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 
 import rospy
 import actionlib
 from tutorial.msg import WashTheDishesAction, WashTheDishesGoal
 
 def feedback_cb(msg):
- print('Feedback received:', msg)
+    print('Feedback received:', msg)
 
 def call_server():
 
     client = actionlib.SimpleActionClient(
-        'wash_dishes_as', 
+        'TopicName', 
         WashTheDishesAction
     )
 
-    client.wait_for_server()
-
     goal = WashTheDishesGoal()
-    goal.number_of_minutes = 20
+    goal.number_of_minutes = 5
 
+    client.wait_for_server()
     client.send_goal(goal, feedback_cb=feedback_cb)
-
     client.wait_for_result()
 
     result = client.get_result()
